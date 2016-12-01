@@ -1,6 +1,10 @@
 {
   "name": "soundmap",
+  "repository": "https://github.com/Hamzali/echoes-backend.git",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.9.1"
+  },
   "description": "a social voice.",
   "main": "index.js",
   "scripts": {
@@ -10,10 +14,10 @@
   "author": "hamza",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.6.8",
-    "morgan": "^1.7.0",
-    "multer": "^1.2.0"
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
+    "mongoose": "4.7.1",
+    "morgan": "1.7.0",
+    "multer": "1.2.0"
   }
 }

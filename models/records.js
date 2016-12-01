@@ -2,18 +2,24 @@ module.exports = function (mongoose) {
 
     recordSchema = new mongoose.Schema({
         title: {type: String},
-        position: {
-            lat: {type: Number},
-            long: {type: Number}
+        location: {
+            type: {type: String},
+            coordinates: [Number]
         },
         date: {type: Date, default: Date.Now}
     });
 
-    let Record = mongoose.model('Record', recordSchema);
+    var Record = mongoose.model('Record', recordSchema);
 
     function addRecord (r) {
-        let s = new Record(r);
-        let id;
+        var s = new Record({
+            title: r.title,
+            location: {
+                type: "Point",
+                coordinates: [r.lat, r.long]
+            }
+        });
+        var id;
 
         s.save(function (err, data) {
             if (err) {

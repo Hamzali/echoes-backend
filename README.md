@@ -26,10 +26,8 @@ $npm start
 body 
 {
 	title: string,
-	position: {
-		lat: string,
-		lang: string
-	}
+	lat: string,
+	lang: string
 }
 ```
 
