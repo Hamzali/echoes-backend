@@ -1,10 +1,10 @@
 #Echoes API
 
--To build:
+To build:
 
 ```
 $npm install
-$start the mongodb database
+(start the mongodb database at local)
 $npm start
 ```
 
@@ -35,6 +35,6 @@ body
 
 - /records/upload/:id
 
-uploads the audio file.
+	uploads the audio file.
 
-(body/form-data)
+	(body/form-data)
