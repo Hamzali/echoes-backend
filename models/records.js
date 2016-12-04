@@ -16,7 +16,7 @@ module.exports = function (mongoose) {
             title: r.title,
             location: {
                 type: "Point",
-                coordinates: [r.lat, r.long]
+                coordinates: [r.location.lon, r.location.lat]
             }
         });
         var id;

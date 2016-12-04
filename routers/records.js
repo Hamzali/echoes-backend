@@ -16,14 +16,14 @@ module.exports = function (records) {
             			"id" : doc._id,
             			"title" : doc.title,
             			"location" : {
-            				lat : doc.location.coordinates[0],
-            				lon : doc.location.coordinates[1]
+            				lat : doc.location.coordinates[1],
+            				lon : doc.location.coordinates[0]
             			}
             		});
             	});
             	res.json(responseData);
             } else {
-                res.sendStatus(500);
+                res.sendStatus(404);
             }
         });
     });
@@ -64,14 +64,13 @@ module.exports = function (records) {
 		var data = req.body;
 		if (data
 			&& data.title 
-			&& data.lat 
-			&& data.long) {
+			&& data.location) {
 
 				var id = records.addRecord(data);
 				if (id) {
 					res.json({"id": id});
 				} else {
-					res.sendStatus(500);
+					res.sendStatus(409);
 				}
 				
 		} else {
