@@ -10,7 +10,18 @@ module.exports = function (records) {
     router.get('/', function (req, res) {
         records.allRecords(function (data) {
             if (data) {
-                res.json(data);
+            	responseData = [];
+            	data.forEach(function(doc) {
+            		responseData.push({
+            			"id" : doc._id,
+            			"title" : doc.title,
+            			"location" : {
+            				lat : doc.location.coordinates[0],
+            				lon : doc.location.coordinates[1]
+            			}
+            		});
+            	});
+            	res.json(responseData);
             } else {
                 res.sendStatus(500);
             }
