@@ -4,30 +4,44 @@ To build:
 
 ```
 $npm install
-(start the mongodb database at local)
+```
+
+To start:
+
+Start the mongodb database at local then:
+
+```
 $npm start
 ```
 
 ##API Doc
 
-- /records
+- GET /records
 
 	returns all meta data of the saved records.
 
-- /records/:id
+- GET /records/:id
 
 	returns the audio file of the record with the given id.
 
-- /records/meta
+- POST /records/meta
 
 	saves the meta data and returns the id for audio file upload.
+
+- POST /records/:id
+
+	uploads the raw record file and associates with the meta data belong to given id.
+
+Data schemas:
 
 ```
 body 
 {
 	title: string,
-	lat: number,
-	lang: number
+	location : {
+		lat: number,
+		lon: number
+	}
 }
 ```
 
