@@ -33,7 +33,7 @@ app.use('/records', records);
 // Error Handler.
 app.use(function(req, res) {
   res.status(404);
-  res.send("File not found!");
+  res.send("Route not found!");
 });
 
 // start the app.
