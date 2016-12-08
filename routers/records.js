@@ -47,7 +47,7 @@ module.exports = function (records) {
 
 				res.sendFile(fileName, options, function (err) {
 					if (err) {
-						res.status(500).end(err);
+						res.status(500).end("" + err);
 					} else {
 						console.log('Sent:', fileName);
 					}
@@ -98,7 +98,6 @@ module.exports = function (records) {
 			}
 		});
 		res.json({"message": "ok"});
-		res.sendStatus(200);
 	});
 
 	return router;
