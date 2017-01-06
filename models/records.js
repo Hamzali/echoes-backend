@@ -58,11 +58,11 @@ module.exports = function (mongoose) {
     }
 
     return {
-        Record,
-        addRecord,
-        findRecordById,
-        removeRecord,
-        allRecords
-    }
+        Record: Record,
+        addRecord: addRecord,
+        findRecordById: findRecordById,
+        removeRecord: removeRecord,
+        allRecords: allRecords
+    };
 
 }

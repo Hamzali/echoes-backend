@@ -1,0 +1,8 @@
+{
+  "env": {
+    // I write for browser
+    "browser": false,
+    // in CommonJS
+    "node": true
+  }
+}
