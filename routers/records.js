@@ -33,7 +33,7 @@ module.exports = function (records) {
 		// send the record.
 		records.findRecordById(req.params.id, function (data) {
 			if (data) {
-				var fileName = req.params.id + '.mp3';
+				var fileName = req.params.id + '.mp4';
 
 				var options = {
 					root: __dirname.replace('routers', 'records'),
@@ -47,7 +47,7 @@ module.exports = function (records) {
 
 				res.sendFile(fileName, options, function (err) {
 					if (err) {
-						res.status(500).end(err);
+						res.status(500).end("" + err);
 					} else {
 						console.log('Sent:', fileName);
 					}
@@ -81,7 +81,7 @@ module.exports = function (records) {
 	// Upload the file.
 	var upload = multer({
 		dest:  __dirname.replace('routers', 'records'),
-		limits: {fileSize: 10000000, files:1}
+		limits: {fileSize: 2000000, files:1}
 	});
 
 	router.post('/upload/:id', upload.single('record', 1), function (req, res) {
@@ -97,8 +97,7 @@ module.exports = function (records) {
 				return next(err);
 			}
 		});
-
-		res.sendStatus(200);
+		res.json({"message": "ok"});
 	});
 
 	return router;
