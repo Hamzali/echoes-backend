@@ -8,14 +8,17 @@
   "description": "a social voice.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node app.js"
   },
   "author": "hamza",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.15.2",
+    "chai": "3.5.0",
+    "chai-http": "3.0.0",
     "express": "4.14.0",
+    "mocha": "3.2.0",
     "mongoose": "4.7.1",
     "morgan": "1.7.0",
     "multer": "1.2.0"
